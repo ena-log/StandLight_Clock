@@ -10,7 +10,7 @@ ClockCheck::~ClockCheck()
 
 }
 
-ClockCheck::isUpdate()
+bool ClockCheck::isUpdate()
 {
     time_t curSec = time(NULL);
     if(curSec == prevSec)

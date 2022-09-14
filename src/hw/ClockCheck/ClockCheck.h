@@ -9,7 +9,7 @@ class ClockCheck
 {
 private:
     time_t prevSec;
-    s
+
 public:
     ClockCheck();
     virtual ~ClockCheck();

@@ -1,8 +1,9 @@
 #include "Controller.h"
 
-Controller::Controller(Service *serv)
+Controller::Controller(Service *serv, ClockService *clockServ)
 {
     service = serv;
+    clockService = clockServ;
     lightState = LIGHT_OFF;
 }
 
@@ -15,6 +16,10 @@ void Controller::updateEvent(std::string strBtn)
     
     if (strBtn == "modeButton") {
         service->updateState("modeButton");
+    }
+
+    if (strBtn == "clockUpdate") {
+        clockService->updateEvent();
     }
    
 }
