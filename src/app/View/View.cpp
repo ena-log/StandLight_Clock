@@ -1,7 +1,7 @@
 #include "View.h"
 #include <wiringPi.h>
 
-View::View(Led *led1, Led *led2, Led *led3, Led *led4, Led *led5)
+View::View(Led *led1, Led *led2, Led *led3, Led *led4, Led *led5, LCD *lcd)
 {
     light1 = led1;
     light2 = led2;
@@ -9,6 +9,7 @@ View::View(Led *led1, Led *led2, Led *led3, Led *led4, Led *led5)
     light4 = led4;
     light5 = led5;
     lightState = LIGHT_OFF;
+    this->lcd = lcd;
 }
 
 View::~View()
@@ -24,6 +25,8 @@ void View::setState(int state)
 
 void View::lightView()
 {
+    char buff[30];
+
     switch (lightState)
     {
         case LIGHT_OFF:
@@ -50,6 +53,10 @@ void View::lightView()
             lightOn_5();
         break;
     }
+
+    sprintf(buff, "mode : %d", lightState);
+    lcd->WriteStringXY(0,0, buff);
+
 }
 
 void View::lightOn_1()
