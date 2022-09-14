@@ -10,10 +10,16 @@ Listener::~Listener()
 {
 }
 
-void Listener::checkEvent()
-{
-    if (powerButton->getState() == RELEASE_ACTIVE)
-    {
-        controller->updateEvent("modeButton");
-    }
-}
+// void Listener::checkEvent()
+// {
+//     if (powerButton->getState() == RELEASE_ACTIVE)
+//     {
+//         controller->updateEvent("modeButton");
+//     }
+
+//     //시간 감시
+//     if (timeClock->isUpdate())  
+//     {
+//         controller->updateEvent("clockUpdate");
+//     }
+// }

@@ -10,6 +10,8 @@ add_executable(${PROJECT_NAME}
     ./src/app/View/View.cpp
     ./src/hw/Button/Button.cpp
     ./src/hw/Led/Led.cpp
+    ./src/hw/I2C/I2C.cpp
+    ./src/hw/LCD/LCD.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
@@ -19,6 +21,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     ./src/app/View
     ./src/hw/Button
     ./src/hw/Led
+    ./src/hw/I2C
+    ./src/hw/LCD
 )
 
 target_link_libraries(${PROJECT_NAME} PUBLIC
