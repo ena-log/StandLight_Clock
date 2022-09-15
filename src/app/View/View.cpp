@@ -25,7 +25,6 @@ void View::setState(int state)
 
 void View::lightView()
 {
-    char buff[30];
 
     switch (lightState)
     {
@@ -54,7 +53,8 @@ void View::lightView()
         break;
     }
 
-    sprintf(buff, "mode : %d", lightState);
+    char buff[30];
+    sprintf(buff, "Light %d", lightState);
     lcd->WriteStringXY(0,0, buff);
 
 }
